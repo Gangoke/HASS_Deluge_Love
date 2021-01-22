@@ -1,0 +1,6 @@
+##Deluge
+  - platform: deluge
+    host: <deluge ip>
+    port: <daemon port>
+    username: <username>
+    password: <password>
