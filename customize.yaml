@@ -1,0 +1,14 @@
+##Deluge
+ #Icons
+  sensor.deluge_down_mb:
+    friendly_name: Download
+    icon: mdi:download-network
+  sensor.deluge_up_kb:
+    friendly_name: Upload
+    icon: mdi:upload-network
+  sensor.deluge_status1:
+    friendly_name: Status
+    icon: mdi:water
+  switch.deluge_switch:
+    friendly_name: Start/Pause
+    icon: mdi:play-pause
