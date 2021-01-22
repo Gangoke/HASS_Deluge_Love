@@ -2,7 +2,7 @@
  ##Sensors
   - platform: deluge
     host: <deluge IP>
-    port: <port>
+    port: <daemon port>
     username: <username>
     password: <password>
     monitored_variables:
