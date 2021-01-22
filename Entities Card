@@ -1,0 +1,19 @@
+type: entities
+entities:
+  - type: weblink
+    url: 'http://<deluge ip>:<webui port>/'
+    name: WebUI
+    icon: 'mdi:earth'
+  - entity: switch.deluge_switch
+    icon: 'hass:play-pause'
+    name: Start/Pause
+  - entity: sensor.deluge_status1
+    name: Status
+    icon: 'mdi:water'
+  - entity: sensor.deluge_up_kb
+    name: Upload
+    icon: 'mdi:upload-network'
+  - entity: sensor.deluge_down_mb
+    name: Download
+    icon: 'mdi:download-network'
+title: Deluge
