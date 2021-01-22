@@ -1,0 +1,28 @@
+##Deluge 
+ ##Sensors
+  - platform: deluge
+    host: <deluge IP>
+    port: <port>
+    username: <username>
+    password: <password>
+    monitored_variables:
+      - 'current_status'
+      - 'download_speed'
+      - 'upload_speed'
+ ##Templates
+  - platform: template
+   ##Download KiB to MB
+    sensors:
+      deluge_down_mb:
+        friendly_name: 'Download'
+        value_template: "{{ (states('sensor.deluge_down_speed')|float / 976.563) | round(2) }}"
+        unit_of_measurement: "MB/s"
+   ##Upload KiB to KB        
+      deluge_up_kb:
+        friendly_name: 'Upload'
+        value_template: "{{ (states('sensor.deluge_up_speed')|float * 1.024) | round(2)}}"
+        unit_of_measurement: "KB/s"
+   ##Status Text Replacement    
+      deluge_status1:
+        friendly_name: 'Status'
+        value_template: "{{ states('sensor.deluge_status')|regex_replace(find='Up/Down', replace='Online', ignorecase=False)|regex_replace(find='idle', replace='Paused', ignorecase=False)|regex_replace(find='unavailable', replace='Offline', ignorecase=False)}}"
